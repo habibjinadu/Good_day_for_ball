@@ -9,18 +9,27 @@ import time
 from time import sleep
 import network
 
+import urandom
+
+def randint(min, max): # generate a random number between min and max
+    span = max - min + 1
+    div = 0x3fffffff // span
+    offset = urandom.getrandbits(30) // div
+    val = min + offset
+    return val
+
 def do_connect():  # connect to the internet
     import network
     # connect to the internet
     sta_if = network.WLAN(network.STA_IF) # configure the ESP8266 to enable wifi
-    sta_if.active(True)                   # make it active                     
-    sta_if.scan()                           # scan for available access points
+    #sta_if.active(True)                   # make it active                     
+    #sta_if.scan()                           # scan for available access points
     #sta_if.connect('Habib', 'kendrick')     # connect to this wifi network
     # enter in your Wi-Fi Name and Password
     while (not sta_if.isconnected()):
         sta_if.active(True)
-        sta_if.connect('Habib', 'kendrick') 
-        time.sleep_ms(1000)                      # wait for 200 ms
+        sta_if.connect('Habib', 'password') 
+        time.sleep_ms(randint(100, 1000))                     # wait for 200 ms                
         print('connecting...')
     return sta_if.isconnected();
 
