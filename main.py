@@ -13,9 +13,9 @@ wakeButton = machine.Pin(16, machine.Pin.IN) # Configure D0-GPIO16 as an input p
 hourButton = machine.Pin(14, machine.Pin.IN) # Configure D5-GPI14 as an input pin
 nowButton = machine.Pin(12, machine.Pin.IN) # Configure D6-GPI12 as an input pin
 
-connected = good_time_for_ball.do_connect()
-powerButton.on()
-print('connected')
+connected = good_time_for_ball.do_connect()                 # try to connect to wi-fi 
+powerButton.value(connected)                                # turn on red_led if wi-fi is connected
+#print('connected')
 
 while (1):
     
