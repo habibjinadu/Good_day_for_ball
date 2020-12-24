@@ -26,11 +26,11 @@ def do_connect():  # connect to the internet
     #sta_if.scan()                           # scan for available access points
     #sta_if.connect('Habib', 'kendrick')     # connect to this wifi network
     # enter in your Wi-Fi Name and Password
-    while (not sta_if.isconnected()):
-        sta_if.active(True)
-        sta_if.connect('Habib', 'password') 
-        time.sleep_ms(randint(100, 1000))                     # wait for 200 ms                
-        print('connecting...')
+    #while (not sta_if.isconnected()):
+    sta_if.active(True)
+    sta_if.connect('Habib', 'password') 
+    time.sleep_ms(randint(100, 1000))                     # wait for 200 ms                
+    print('connecting...')
     return sta_if.isconnected();
 
 def get_data(parameter, weather_data): # get a specific parameter from weather_data 

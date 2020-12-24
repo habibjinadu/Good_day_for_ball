@@ -14,7 +14,7 @@ hourButton = machine.Pin(14, machine.Pin.IN) # Configure D5-GPI14 as an input pi
 nowButton = machine.Pin(12, machine.Pin.IN) # Configure D6-GPI12 as an input pin
 
 connected = good_time_for_ball.do_connect()
-wifiLed.on()
+powerButton.on()
 print('connected')
 
 while (1):
