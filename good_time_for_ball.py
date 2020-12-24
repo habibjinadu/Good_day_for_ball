@@ -124,7 +124,7 @@ i2c = I2C(scl=Pin(5), sda = Pin(4), freq = 50000)                       # initia
 
 
 
-url = "https://weatherbit-v1-mashape.p.rapidapi.com/current?lang=en&lon=-113.4938&lat=53.5461"  # API URL
+url = "https://weatherbit-v1-mashape.p.rapidapi.com/current?lang=en&lon=-114.0719&lat=51.0447"  # API URL
 headers = {                                                                                     # API Headers      
         'x-rapidapi-host': "weatherbit-v1-mashape.p.rapidapi.com",
         'x-rapidapi-key': "8623950a6dmsh625496159b93e42p1733c9jsnb2cd9bd0654a"
